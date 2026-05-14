@@ -1,85 +1,244 @@
 # Local Explorer
 
-Local Explorer is a fullstack application designed to help users discover local activities based on their current location, real-time weather, and personalized activity suggestions. The app integrates geolocation, the Weatherstack API for weather data, and Google Maps for visualizing your location and nearby points of interest. It features a modern UI built with React, Bootstrap, and smooth animations via Framer Motion.
+Local Explorer is a full-stack application that helps users discover local activities based on their location, real-time weather, and personalized activity suggestions.
+
+The app uses geolocation, Weatherstack API for weather data, and Google Maps for visualizing the user's location and nearby points of interest. It features a modern UI built with React, Bootstrap, and Framer Motion.
+
+---
 
 ## Features
 
-- **Geolocation & Weather Data:**  
-  Automatically retrieves the user’s location and fetches current weather data using the Weatherstack API.
-  
-- **Activity Suggestions:**  
-  Provides recommendations for activities based on current weather conditions (using placeholder logic with room for future enhancements).
+- Get user location using browser geolocation
+- Fetch real-time weather data using Weatherstack API
+- Suggest activities based on weather conditions
+- Search weather and suggestions by city
+- Display location using Google Maps
+- Responsive UI with Bootstrap
+- Smooth animations using Framer Motion
 
-- **Google Maps Integration:**  
-  Displays a map centered on the user’s location along with nearby points of interest.
-
-- **City Search:**  
-  Users can search for weather and suggestions for any city.
-
-- **Responsive, Modern UI:**  
-  Built with React and styled with Bootstrap and Framer Motion for smooth animations and a polished look.
+---
 
 ## Technologies Used
 
-- **Backend:**  
-  - Python, Flask, Flask-CORS  
-  - Requests, python-dotenv  
-  - Weatherstack API
+### Backend
 
-- **Frontend:**  
-  - React, Axios  
-  - Bootstrap, Framer Motion  
-  - Google Maps JavaScript API (via `@react-google-maps/api`)
+- Python
+- Flask
+- Flask-CORS
+- Requests
+- python-dotenv
+- Weatherstack API
 
-## Getting Started
+### Frontend
 
-### Prerequisites
+- React
+- Axios
+- Bootstrap
+- Framer Motion
+- Google Maps JavaScript API
+- `@react-google-maps/api`
 
-- Node.js and npm installed.
-- Python 3.x installed.
-- A GitHub account.
-- API keys for Weatherstack and Google Maps.
+---
 
-### Installation
+## Project Structure
 
-#### Backend
-
-1. Navigate to the `backend` directory:
-   ```
-   cd backend
+```text
+local-explorer/
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── .env
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── .env
+├── README.md
+└── .gitignore
 ```
+
+---
+
+## Prerequisites
+
+Before running this project, make sure you have:
+
+- Node.js and npm installed
+- Python 3 installed
+- API key for Weatherstack
+- API key for Google Maps
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/local-explorer.git
+cd local-explorer
+```
+
+---
+
+## Backend Setup
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Create a virtual environment:
+
+```bash
 python -m venv env
-# On macOS/Linux:
+```
+
+Activate the virtual environment:
+
+### macOS / Linux
+
+```bash
 source env/bin/activate
-# On Windows:
+```
+
+### Windows
+
+```bash
 env\Scripts\activate
+```
 
+Install dependencies:
 
-Install required Python packages:
-
- ```
+```bash
 pip install -r requirements.txt
- ```
+```
 
- Start the Flask server:
+Create a `.env` file:
 
- ```
+```bash
+touch .env
+```
+
+Add your API key:
+
+```env
+WEATHERSTACK_API_KEY=your_weatherstack_api_key
+```
+
+Run the Flask server:
+
+```bash
 python app.py
- ```
+```
 
- Usage
-Geolocation:
-Click the "Get My Location" button to allow the app to detect your current position.
+---
 
-City Search:
-Use the search box to fetch weather data and suggestions for a specific city.
+## Frontend Setup
 
-Map:
+Open a new terminal and navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file:
+
+```bash
+touch .env
+```
+
+Add your Google Maps API key:
+
+```env
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
+
+Start the React app:
+
+```bash
+npm start
+```
+
+---
+
+## Usage
+
+### Geolocation
+
+Click the **Get My Location** button to allow the app to detect your current location.
+
+### City Search
+
+Use the search box to fetch weather data and activity suggestions for a specific city.
+
+### Map
+
 View your location and nearby points of interest on an interactive Google Map.
 
-Deployment
-For production, consider deploying:
+---
 
-The Flask backend on platforms such as Heroku, Render, or AWS.
-The React frontend on platforms like Vercel, Netlify, or GitHub Pages.
-Make sure to configure your environment variables (API keys) appropriately on your chosen hosting platforms.
+## Environment Variables
+
+### Backend `.env`
+
+```env
+WEATHERSTACK_API_KEY=your_weatherstack_api_key
+```
+
+### Frontend `.env`
+
+```env
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
+
+---
+
+## Deployment
+
+For production deployment, you can use:
+
+### Backend
+
+- Render
+- Heroku
+- AWS
+- Railway
+
+### Frontend
+
+- Vercel
+- Netlify
+- GitHub Pages
+
+Make sure to configure environment variables on your hosting platform.
+
+---
+
+## Future Improvements
+
+- Improve activity recommendation logic
+- Add database support
+- Save favorite locations
+- Add user authentication
+- Add nearby restaurants, parks, and events
+- Improve mobile experience
+
+---
+
+## Author
+
+Developed as a full-stack web application project.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
